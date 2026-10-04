@@ -424,6 +424,37 @@ Gothic ProN",
 
       <h2>🔥 学生に役立つ機能</h2>
 
+     <section class="card">
+
+  <h2>🔍 学生のお金診断</h2>
+
+  <p>あなたのお金の使い方を診断してみよう！</p>
+
+  <label for="income">毎月の収入（円）</label>
+
+  <input
+
+    id="income"
+
+    type="number"
+
+    placeholder="80000"
+
+  >
+
+  <label for="expense">毎月の支出（円）</label>
+
+  <input
+
+    id="expense"
+
+    type="number"
+
+    placeholder="60000"
+
+  >
+
+  <label for="savings">現在の貯金額（円）</label
       <div class="features">
 
         <div class="feature">
@@ -610,6 +641,89 @@ Gothic ProN",
 
   </script>
 
+  function moneyDiagnosis() {
+
+  const income =
+
+    Number(document.getElementById("income").value);
+
+  const expense =
+
+    Number(document.getElementById("expense").value);
+
+  const savings =
+
+    Number(document.getElementById("savings").value);
+
+  if (!income || !expense || savings < 0) {
+
+    document.getElementById(
+
+      "diagnosisResult"
+
+    ).textContent =
+
+      "すべての項目を入力してください。";
+
+    return;
+
+  }
+
+  const remaining = income - expense;
+
+  const savingRate = remaining / income;
+
+  let result = "";
+
+  if (savingRate >= 0.3) {
+
+    result =
+
+      "🟢 貯金上手タイプ！" +
+
+      "かなり上手にお金を管理できています。";
+
+  } else if (savingRate >= 0.1) {
+
+    result =
+
+      "🔵 バランスタイプ！" +
+
+      "無理なく貯金できています。";
+
+  } else if (savingRate >= 0) {
+
+    result =
+
+      "🟡 使いすぎ注意タイプ！" +
+
+      "もう少し支出を減らすと貯金しやすくなります。";
+
+  } else {
+
+    result =
+
+      "🔴 赤字注意タイプ！" +
+
+      "収入より支出が多くなっています。";
+
+  }
+
+  document.getElementById(
+
+    "diagnosisResult"
+
+  ).textContent =
+
+    result +
+
+    " 毎月の残りは約 " +
+
+    Math.round(remaining).toLocaleString() +
+
+    "円です。";
+
+}
 </body>
 
 </html>
