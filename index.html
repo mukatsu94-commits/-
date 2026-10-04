@@ -37,3 +37,580 @@
         "Helvetica Neue",
 
         "Hiragino Kaku Gothic 
+
+Gothic ProN",
+
+        "Yu Gothic",
+
+        YuGothic,
+
+        Meiryo,
+
+        sans-serif;
+
+    }
+
+    body {
+
+      background: #f5f7fa;
+
+      color: #222;
+
+      line-height: 1.7;
+
+    }
+
+    header {
+
+      background: #111827;
+
+      color: white;
+
+      padding: 20px;
+
+      text-align: center;
+
+    }
+
+    header h1 {
+
+      font-size: 24px;
+
+      margin-bottom: 5px;
+
+    }
+
+    header p {
+
+      font-size: 14px;
+
+      color: #d1d5db;
+
+    }
+
+    main {
+
+      max-width: 900px;
+
+      margin: 0 auto;
+
+      padding: 20px;
+
+    }
+
+    .hero {
+
+      background: white;
+
+      border-radius: 16px;
+
+      padding: 30px 20px;
+
+      margin-bottom: 20px;
+
+      text-align: center;
+
+      box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+
+    }
+
+    .hero h2 {
+
+      font-size: 28px;
+
+      margin-bottom: 10px;
+
+    }
+
+    .hero p {
+
+      color: #555;
+
+    }
+
+    .card {
+
+      background: white;
+
+      border-radius: 16px;
+
+      padding: 22px;
+
+      margin-bottom: 20px;
+
+      box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+
+    }
+
+    .card h2 {
+
+      font-size: 21px;
+
+      margin-bottom: 15px;
+
+    }
+
+    label {
+
+      display: block;
+
+      margin-top: 12px;
+
+      margin-bottom: 5px;
+
+      font-weight: bold;
+
+    }
+
+    input {
+
+      width: 100%;
+
+      padding: 12px;
+
+      border: 1px solid #d1d5db;
+
+      border-radius: 8px;
+
+      font-size: 16px;
+
+    }
+
+    button {
+
+      width: 100%;
+
+      padding: 13px;
+
+      margin-top: 15px;
+
+      border: none;
+
+      border-radius: 8px;
+
+      background: #111827;
+
+      color: white;
+
+      font-size: 16px;
+
+      font-weight: bold;
+
+      cursor: pointer;
+
+    }
+
+    button:hover {
+
+      opacity: 0.9;
+
+    }
+
+    .result {
+
+      margin-top: 15px;
+
+      padding: 15px;
+
+      background: #f3f4f6;
+
+      border-radius: 10px;
+
+      font-weight: bold;
+
+    }
+
+    .features {
+
+      display: grid;
+
+      grid-template-columns: repeat(2, 1fr);
+
+      gap: 15px;
+
+    }
+
+    .feature {
+
+      background: #f9fafb;
+
+      border-radius: 12px;
+
+      padding: 18px;
+
+    }
+
+    .feature h3 {
+
+      margin-bottom: 5px;
+
+    }
+
+    .feature p {
+
+      font-size: 14px;
+
+      color: #666;
+
+    }
+
+    footer {
+
+      text-align: center;
+
+      padding: 30px 20px;
+
+      color: #777;
+
+      font-size: 13px;
+
+    }
+
+    @media (max-width: 600px) {
+
+      .features {
+
+        grid-template-columns: 1fr;
+
+      }
+
+      .hero h2 {
+
+        font-size: 23px;
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <header>
+
+    <h1>💰 学生マネー</h1>
+
+    <p>学生のお金を、もっと賢く。</p>
+
+  </header>
+
+  <main>
+
+    <section class="hero">
+
+      <h2>学生のお金をかんたん管理</h2>
+
+      <p>
+
+        バイト・貯金・生活費を入力するだけで、
+
+        自分のお金を見える化できます。
+
+      </p>
+
+    </section>
+
+    <section class="card">
+
+      <h2>💼 バイト収入シミュレーター</h2>
+
+      <label for="wage">時給（円）</label>
+
+      <input
+
+        id="wage"
+
+        type="number"
+
+        placeholder="1200"
+
+      >
+
+      <label for="hours">1日の勤務時間</label>
+
+      <input
+
+        id="hours"
+
+        type="number"
+
+        placeholder="5"
+
+      >
+
+      <label for="days">週の勤務日数</label>
+
+      <input
+
+        id="days"
+
+        type="number"
+
+        placeholder="3"
+
+      >
+
+      <button onclick="calculateIncome()">
+
+        月収を計算する
+
+      </button>
+
+      <div
+
+        class="result"
+
+        id="incomeResult"
+
+      >
+
+        ここに結果が表示されます。
+
+      </div>
+
+    </section>
+
+    <section class="card">
+
+      <h2>🎯 貯金目標シミュレーター</h2>
+
+      <label for="target">目標金額（円）</label>
+
+      <input
+
+        id="target"
+
+        type="number"
+
+        placeholder="100000"
+
+      >
+
+      <label for="saving">毎月の貯金額（円）</label>
+
+      <input
+
+        id="saving"
+
+        type="number"
+
+        placeholder="20000"
+
+      >
+
+      <button onclick="calculateSaving()">
+
+        何ヶ月かかる？
+
+      </button>
+
+      <div
+
+        class="result"
+
+        id="savingResult"
+
+      >
+
+        ここに結果が表示されます。
+
+      </div>
+
+    </section>
+
+    <section class="card">
+
+      <h2>🔥 学生に役立つ機能</h2>
+
+      <div class="features">
+
+        <div class="feature">
+
+          <h3>💰 バイト収入</h3>
+
+          <p>
+
+            時給・勤務時間・勤務日数から
+
+            月収を計算できます。
+
+          </p>
+
+        </div>
+
+        <div class="feature">
+
+          <h3>🎯 貯金計画</h3>
+
+          <p>
+
+            欲しいものや旅行など、
+
+            目標金額までの期間を計算できます。
+
+          </p>
+
+        </div>
+
+        <div class="feature">
+
+          <h3>🏠 生活費管理</h3>
+
+          <p>
+
+            家賃・食費・通信費などを
+
+            まとめて管理できます。
+
+          </p>
+
+        </div>
+
+        <div class="feature">
+
+          <h3>📈 お金の知識</h3>
+
+          <p>
+
+            NISA・投資・節約など、
+
+            学生向けのお金の知識を紹介します。
+
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+
+    © 2026 学生マネー
+
+  </footer>
+
+  <script>
+
+    function calculateIncome() {
+
+      const wage =
+
+        Number(
+
+          document.getElementById("wage").value
+
+        );
+
+      const hours =
+
+        Number(
+
+          document.getElementById("hours").value
+
+        );
+
+      const days =
+
+        Number(
+
+          document.getElementById("days").value
+
+        );
+
+      if (!wage || !hours || !days) {
+
+        document.getElementById(
+
+          "incomeResult"
+
+        ).textContent =
+
+          "すべての項目を入力してください。";
+
+        return;
+
+      }
+
+      const weekly =
+
+        wage * hours * days;
+
+      const monthly =
+
+        weekly * 4.345;
+
+      document.getElementById(
+
+        "incomeResult"
+
+      ).textContent =
+
+        "あなたの月収は約 " +
+
+        Math.round(monthly).toLocaleString() +
+
+        "円です！";
+
+    }
+
+    function calculateSaving() {
+
+      const target =
+
+        Number(
+
+          document.getElementById("target").value
+
+        );
+
+      const saving =
+
+        Number(
+
+          document.getElementById("saving").value
+
+        );
+
+      if (!target || !saving) {
+
+        document.getElementById(
+
+          "savingResult"
+
+        ).textContent =
+
+          "すべての項目を入力してください。";
+
+        return;
+
+      }
+
+      const months =
+
+        Math.ceil(target / saving);
+
+      document.getElementById(
+
+        "savingResult"
+
+      ).textContent =
+
+        "目標達成まで約 " +
+
+        months +
+
+        "ヶ月かかります！";
+
+    }
+
+  </script>
+
+</body>
+
+</html>
+    
