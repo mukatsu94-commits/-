@@ -303,6 +303,42 @@
 
     }
 
+.quick-menu {
+
+  display: grid;
+
+  gap: 10px;
+
+  margin-bottom: 20px;
+
+}
+
+.quick-menu a {
+
+  display: block;
+
+  padding: 15px;
+
+  background: #111827;
+
+  color: white;
+
+  text-decoration: none;
+
+  border-radius: 10px;
+
+  text-align: center;
+
+  font-weight: bold;
+
+}
+
+.quick-menu a:hover {
+
+  opacity: 0.9;
+
+}
+  
   </style>
 
 </head>
@@ -319,6 +355,16 @@
 
   <main>
 
+<div class="quick-menu">
+
+  <a href="#income-section">💼 バイト代を計算する</a>
+
+  <a href="#saving-section">🎯 貯金額を計算する</a>
+
+  <a href="#living-section">🏠 生活費を計算する</a>
+
+</div>
+  
     <!-- メイン紹介 -->
 
     <section class="hero">
@@ -329,7 +375,7 @@
 
         バイト・貯金・生活費を入力するだけで、
 
-        自分のお金を見える化できます。
+        自分のお金を使い道が見れます。
 
       </p>
 
@@ -339,6 +385,8 @@
 
     <section class="card">
 
+<div id="income-section"></div>
+      
       <h2>💼 バイト収入シミュレーター</h2>
 
       <label for="wage">
@@ -413,6 +461,8 @@
 
     <section class="card">
 
+<div id="saving-section"></div>
+      
       <h2>🎯 貯金目標シミュレーター</h2>
 
       <label for="target">
@@ -551,6 +601,8 @@
 
     <section class="card">
 
+<div id="living-section"></div>
+      
       <h2>🏠 毎月の生活費チェック</h2>
 
       <label for="rent">
