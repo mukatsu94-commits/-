@@ -1125,6 +1125,56 @@
 
     }
 
+function calculateRealWage() {
+
+  const wage =
+
+    Number(document.getElementById("realWage").value);
+
+  const workHours =
+
+    Number(document.getElementById("workHours").value);
+
+  const commuteHours =
+
+    Number(document.getElementById("commuteHours").value);
+
+  const transportCost =
+
+    Number(document.getElementById("transportCost").value);
+
+  if (!wage || !workHours || !commuteHours || transportCost < 0) {
+
+    document.getElementById("realWageResult").textContent =
+
+      "すべての項目を入力してください。";
+
+    return;
+
+  }
+
+  const actualMoney =
+
+    wage * workHours - transportCost;
+
+  const totalTime =
+
+    workHours + commuteHours;
+
+  const realWage =
+
+    actualMoney / totalTime;
+
+  document.getElementById("realWageResult").textContent =
+
+    "あなたの実質時給は約 " +
+
+    Math.round(realWage).toLocaleString() +
+
+    "円です！";
+
+}
+    
   </script>
 
 </body>
