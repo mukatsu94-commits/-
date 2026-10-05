@@ -1340,6 +1340,76 @@ function calculateRealWage() {
     "円です！";
 
 }
+
+function jobDiagnosis() {
+
+  const people =
+
+    document.getElementById("people").value;
+
+  const priority =
+
+    document.getElementById("priority").value;
+
+  const service =
+
+    document.getElementById("service").value;
+
+  if (!people || !priority || !service) {
+
+    document.getElementById("jobResult").textContent =
+
+      "3つすべて選んでください。";
+
+    return;
+
+  }
+
+  let result = "";
+
+  if (priority === "money") {
+
+    if (people === "yes") {
+
+      result = "📚 塾・家庭教師がおすすめ！";
+
+    } else {
+
+      result = "📦 軽作業・倉庫がおすすめ！";
+
+    }
+
+  } else if (priority === "easy") {
+
+    if (people === "no") {
+
+      result = "📦 軽作業・倉庫がおすすめ！";
+
+    } else {
+
+      result = "📚 塾・家庭教師がおすすめ！";
+
+    }
+
+  } else {
+
+    if (service === "yes") {
+
+      result = "🍔 飲食店がおすすめ！";
+
+    } else {
+
+      result = "🏪 コンビニがおすすめ！";
+
+    }
+
+  }
+
+  document.getElementById("jobResult").textContent =
+
+result;
+
+}
     
   </script>
 
