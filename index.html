@@ -637,6 +637,88 @@
 
     </section>
 
+<section class="card">
+
+  <h2>⏱️ バイト実質時給シミュレーター</h2>
+
+  <p>
+
+    通勤時間や交通費まで考えて、
+
+    本当の時給を計算してみよう！
+
+  </p>
+
+  <label for="realWage">時給（円）</label>
+
+  <input
+
+    id="realWage"
+
+    type="number"
+
+    placeholder="1200"
+
+  >
+
+  <label for="workHours">1日の勤務時間</label>
+
+  <input
+
+    id="workHours"
+
+    type="number"
+
+    placeholder="5"
+
+  >
+
+  <label for="commuteHours">往復の通勤時間（時間）</label>
+
+  <input
+
+    id="commuteHours"
+
+    type="number"
+
+    step="0.5"
+
+    placeholder="1"
+
+  >
+
+  <label for="transportCost">1日の交通費（円）</label>
+
+  <input
+
+    id="transportCost"
+
+    type="number"
+
+    placeholder="500"
+
+  >
+
+  <button onclick="calculateRealWage()">
+
+    実質時給を計算する
+
+  </button>
+
+  <div
+
+    class="result"
+
+    id="realWageResult"
+
+  >
+
+    ここに結果が表示されます。
+
+</div>
+
+</section>
+    
     <!-- 機能紹介 -->
 
     <section class="card">
