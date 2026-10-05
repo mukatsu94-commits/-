@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 
 <html lang="ja">
@@ -10,9 +11,13 @@
 
   <title>学生マネー｜バイト・貯金・生活費をかんたん計算</title>
 
-  <meta name="description"
+  <meta
 
-        content="大学生・専門学生向けのお金管理サイト。バイト収入、貯金目標、生活費などをかんたんに計算できます。">
+    name="description"
+
+    content="大学生・専門学生向けのお金管理サイト。バイト収入、貯金目標、生活費、お金タイプなどをかんたんにチェックできます。"
+
+  >
 
   <style>
 
@@ -36,9 +41,7 @@
 
         "Helvetica Neue",
 
-        "Hiragino Kaku Gothic 
-
-Gothic ProN",
+        "Hiragino Kaku Gothic ProN",
 
         "Yu Gothic",
 
@@ -47,10 +50,6 @@ Gothic ProN",
         Meiryo,
 
         sans-serif;
-
-    }
-
-    body {
 
       background: #f5f7fa;
 
@@ -66,7 +65,7 @@ Gothic ProN",
 
       color: white;
 
-      padding: 20px;
+      padding: 22px 20px;
 
       text-align: center;
 
@@ -74,7 +73,7 @@ Gothic ProN",
 
     header h1 {
 
-      font-size: 24px;
+      font-size: 26px;
 
       margin-bottom: 5px;
 
@@ -104,7 +103,7 @@ Gothic ProN",
 
       border-radius: 16px;
 
-      padding: 30px 20px;
+      padding: 35px 20px;
 
       margin-bottom: 20px;
 
@@ -254,6 +253,16 @@ Gothic ProN",
 
     }
 
+    .notice {
+
+      font-size: 12px;
+
+      color: #777;
+
+      margin-top: 10px;
+
+    }
+
     footer {
 
       text-align: center;
@@ -280,6 +289,18 @@ Gothic ProN",
 
       }
 
+      main {
+
+        padding: 12px;
+
+      }
+
+      .card {
+
+        padding: 18px;
+
+      }
+
     }
 
   </style>
@@ -298,6 +319,8 @@ Gothic ProN",
 
   <main>
 
+    <!-- メイン紹介 -->
+
     <section class="hero">
 
       <h2>学生のお金をかんたん管理</h2>
@@ -312,11 +335,17 @@ Gothic ProN",
 
     </section>
 
+    <!-- バイト収入 -->
+
     <section class="card">
 
       <h2>💼 バイト収入シミュレーター</h2>
 
-      <label for="wage">時給（円）</label>
+      <label for="wage">
+
+        時給（円）
+
+      </label>
 
       <input
 
@@ -328,7 +357,11 @@ Gothic ProN",
 
       >
 
-      <label for="hours">1日の勤務時間</label>
+      <label for="hours">
+
+        1日の勤務時間
+
+      </label>
 
       <input
 
@@ -340,7 +373,11 @@ Gothic ProN",
 
       >
 
-      <label for="days">週の勤務日数</label>
+      <label for="days">
+
+        週の勤務日数
+
+      </label>
 
       <input
 
@@ -372,11 +409,17 @@ Gothic ProN",
 
     </section>
 
+    <!-- 貯金目標 -->
+
     <section class="card">
 
       <h2>🎯 貯金目標シミュレーター</h2>
 
-      <label for="target">目標金額（円）</label>
+      <label for="target">
+
+        目標金額（円）
+
+      </label>
 
       <input
 
@@ -388,7 +431,11 @@ Gothic ProN",
 
       >
 
-      <label for="saving">毎月の貯金額（円）</label>
+      <label for="saving">
+
+        毎月の貯金額（円）
+
+      </label>
 
       <input
 
@@ -420,41 +467,182 @@ Gothic ProN",
 
     </section>
 
+    <!-- お金タイプ診断 -->
+
+    <section class="card">
+
+      <h2>🔍 学生のお金タイプ診断</h2>
+
+      <p>
+
+        あなたのお金の使い方を診断してみよう！
+
+      </p>
+
+      <label for="income">
+
+        毎月の収入（円）
+
+      </label>
+
+      <input
+
+        id="income"
+
+        type="number"
+
+        placeholder="80000"
+
+      >
+
+      <label for="expense">
+
+        毎月の支出（円）
+
+      </label>
+
+      <input
+
+        id="expense"
+
+        type="number"
+
+        placeholder="60000"
+
+      >
+
+      <label for="savings">
+
+        現在の貯金額（円）
+
+      </label>
+
+      <input
+
+        id="savings"
+
+        type="number"
+
+        placeholder="100000"
+
+      >
+
+      <button onclick="moneyDiagnosis()">
+
+        お金タイプを診断する
+
+      </button>
+
+      <div
+
+        class="result"
+
+        id="diagnosisResult"
+
+      >
+
+        ここに診断結果が表示されます。
+
+      </div>
+
+    </section>
+
+    <!-- 生活費 -->
+
+    <section class="card">
+
+      <h2>🏠 毎月の生活費チェック</h2>
+
+      <label for="rent">
+
+        家賃・仕送りなど（円）
+
+      </label>
+
+      <input
+
+        id="rent"
+
+        type="number"
+
+        placeholder="30000"
+
+      >
+
+      <label for="food">
+
+        食費（円）
+
+      </label>
+
+      <input
+
+        id="food"
+
+        type="number"
+
+        placeholder="20000"
+
+      >
+
+      <label for="phone">
+
+        スマホ・通信費（円）
+
+      </label>
+
+      <input
+
+        id="phone"
+
+        type="number"
+
+        placeholder="5000"
+
+      >
+
+      <label for="other">
+
+        その他の支出（円）
+
+      </label>
+
+      <input
+
+        id="other"
+
+        type="number"
+
+        placeholder="10000"
+
+      >
+
+      <button onclick="calculateLivingCost()">
+
+        生活費を計算する
+
+      </button>
+
+      <div
+
+        class="result"
+
+        id="livingResult"
+
+      >
+
+        ここに結果が表示されます。
+
+      </div>
+
+    </section>
+
+    <!-- 機能紹介 -->
+
     <section class="card">
 
       <h2>🔥 学生に役立つ機能</h2>
 
-     <section class="card">
-
-  <h2>🔍 学生のお金診断</h2>
-
-  <p>あなたのお金の使い方を診断してみよう！</p>
-
-  <label for="income">毎月の収入（円）</label>
-
-  <input
-
-    id="income"
-
-    type="number"
-
-    placeholder="80000"
-
-  >
-
-  <label for="expense">毎月の支出（円）</label>
-
-  <input
-
-    id="expense"
-
-    type="number"
-
-    placeholder="60000"
-
-  >
-
-  <label for="savings">現在の貯金額（円）</label
       <div class="features">
 
         <div class="feature">
@@ -493,7 +681,7 @@ Gothic ProN",
 
             家賃・食費・通信費などを
 
-            まとめて管理できます。
+            まとめて確認できます。
 
           </p>
 
@@ -517,6 +705,26 @@ Gothic ProN",
 
     </section>
 
+    <section class="card">
+
+      <h2>💡 このサイトについて</h2>
+
+      <p>
+
+        学生でも自分のお金を分かりやすく管理できるように、
+
+        収入・支出・貯金をかんたんに計算できるサイトです。
+
+      </p>
+
+      <p class="notice">
+
+        ※計算結果は目安です。実際の収入・支出とは異なる場合があります。
+
+      </p>
+
+    </section>
+
   </main>
 
   <footer>
@@ -526,6 +734,12 @@ Gothic ProN",
   </footer>
 
   <script>
+
+    /* =========================
+
+       バイト収入計算
+
+    ========================= */
 
     function calculateIncome() {
 
@@ -589,6 +803,12 @@ Gothic ProN",
 
     }
 
+    /* =========================
+
+       貯金目標計算
+
+    ========================= */
+
     function calculateSaving() {
 
       const target =
@@ -639,92 +859,192 @@ Gothic ProN",
 
     }
 
+    /* =========================
+
+       お金タイプ診断
+
+    ========================= */
+
+    function moneyDiagnosis() {
+
+      const income =
+
+        Number(
+
+          document.getElementById("income").value
+
+        );
+
+      const expense =
+
+        Number(
+
+          document.getElementById("expense").value
+
+        );
+
+      const savings =
+
+        Number(
+
+          document.getElementById("savings").value
+
+        );
+
+      if (
+
+        !income ||
+
+        !expense ||
+
+        savings < 0
+
+      ) {
+
+        document.getElementById(
+
+          "diagnosisResult"
+
+        ).textContent =
+
+          "すべての項目を入力してください。";
+
+        return;
+
+      }
+
+      const remaining =
+
+        income - expense;
+
+      const savingRate =
+
+        remaining / income;
+
+      let result = "";
+
+      if (savingRate >= 0.3) {
+
+        result =
+
+          "🟢 貯金上手タイプ！ " +
+
+          "かなり上手にお金を管理できています。";
+
+      }
+
+      else if (savingRate >= 0.1) {
+
+        result =
+
+          "🔵 バランスタイプ！ " +
+
+          "無理なく貯金できています。";
+
+      }
+
+      else if (savingRate >= 0) {
+
+        result =
+
+          "🟡 使いすぎ注意タイプ！ " +
+
+          "もう少し支出を減らすと貯金しやすくなります。";
+
+      }
+
+      else {
+
+        result =
+
+          "🔴 赤字注意タイプ！ " +
+
+          "収入より支出が多くなっています。";
+
+      }
+
+      document.getElementById(
+
+        "diagnosisResult"
+
+      ).textContent =
+
+        result +
+
+        " 毎月の残りは約 " +
+
+        Math.round(remaining).toLocaleString() +
+
+        "円です。";
+
+    }
+
+    /* =========================
+
+       生活費計算
+
+    ========================= */
+
+    function calculateLivingCost() {
+
+      const rent =
+
+        Number(
+
+          document.getElementById("rent").value
+
+        ) || 0;
+
+      const food =
+
+        Number(
+
+          document.getElementById("food").value
+
+        ) || 0;
+
+      const phone =
+
+        Number(
+
+          document.getElementById("phone").value
+
+        ) || 0;
+
+      const other =
+
+        Number(
+
+          document.getElementById("other").value
+
+        ) || 0;
+
+      const total =
+
+        rent +
+
+        food +
+
+        phone +
+
+        other;
+
+      document.getElementById(
+
+        "livingResult"
+
+      ).textContent =
+
+        "あなたの毎月の生活費は約 " +
+
+        total.toLocaleString() +
+
+        "円です。";
+
+    }
+
   </script>
 
-  function moneyDiagnosis() {
-
-  const income =
-
-    Number(document.getElementById("income").value);
-
-  const expense =
-
-    Number(document.getElementById("expense").value);
-
-  const savings =
-
-    Number(document.getElementById("savings").value);
-
-  if (!income || !expense || savings < 0) {
-
-    document.getElementById(
-
-      "diagnosisResult"
-
-    ).textContent =
-
-      "すべての項目を入力してください。";
-
-    return;
-
-  }
-
-  const remaining = income - expense;
-
-  const savingRate = remaining / income;
-
-  let result = "";
-
-  if (savingRate >= 0.3) {
-
-    result =
-
-      "🟢 貯金上手タイプ！" +
-
-      "かなり上手にお金を管理できています。";
-
-  } else if (savingRate >= 0.1) {
-
-    result =
-
-      "🔵 バランスタイプ！" +
-
-      "無理なく貯金できています。";
-
-  } else if (savingRate >= 0) {
-
-    result =
-
-      "🟡 使いすぎ注意タイプ！" +
-
-      "もう少し支出を減らすと貯金しやすくなります。";
-
-  } else {
-
-    result =
-
-      "🔴 赤字注意タイプ！" +
-
-      "収入より支出が多くなっています。";
-
-  }
-
-  document.getElementById(
-
-    "diagnosisResult"
-
-  ).textContent =
-
-    result +
-
-    " 毎月の残りは約 " +
-
-    Math.round(remaining).toLocaleString() +
-
-    "円です。";
-
-}
 </body>
 
 </html>
-    
